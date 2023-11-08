@@ -1,4 +1,4 @@
- * {
+ *, *::after, *::before {
      margin: 0;
      padding: 0;
      box-sizing: border-box;
@@ -8,6 +8,12 @@
  .a {
      text-decoration: none;
  }
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
  /*-----header-----*/
  
  .top_title {
@@ -97,40 +103,76 @@
      font-weight: 700;
      line-height: normal;
  }
+
  /*---------------------------*/
  /*--------------категории--------*/
- 
  .categories {
-     padding-top: 65px;
-     display: flex;
-     justify-content: space-between;
-     flex-wrap: wrap;
-     gap: 30px;
+    margin-top: 65px;
  }
- 
- .choise {
-     position: relative;
-     display: flex;
-     justify-content: space-between;
-     flex-wrap: wrap;
-     gap: 30px;
+
+ .categories__inner {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
  }
- 
- .choise_big {
-     position: relative;
-     display: flex;
-     justify-content: space-between;
-     flex-wrap: wrap;
-     gap: 30px;
+
+ .categories__item {
+    width: calc(1 / 3 * 100%);
+    flex: 0 0 calc(1 / 3 * 100%);
+    padding: 15px;
+    height: 260px;
  }
- 
- .text_choise {
-     position: absolute;
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
+
+ .categories__item--large {
+    width: calc(1 / 3 * 100%);
+    flex-basis: 100%;
+    height: 180px;
  }
+
+ .caterory {
+    position: relative;
+    height: 100%;
+ }
+
+ .caterory__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+ }
+ .caterory__bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+ }
+ .caterory__text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scaleX(1);
+    transition: all 0.3s ease;
+
+    color: #FFF;
+ }
+ .caterory__subtitle {
+    text-align: center;
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+ }
+ .caterory__title {
+    color: #F16D7F;
+    font-family: Lato;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+ }
+
  /*------------------------*/
  
  .text_upper {
@@ -244,13 +286,15 @@
  }
  
  .button_goods {
-     padding: 15px 39px;
-     margin-top: 48px;
-     border: 1px solid #F16D7F;
-     text-decoration: none;
-     display: flex;
-     justify-content: center;
-     align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 48px;
+    padding: 15px 39px;
+
+    border: 1px solid #F16D7F;
+    text-decoration: none;
  }
  
  .text_button {
